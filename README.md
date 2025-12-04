@@ -90,3 +90,7 @@ runbat_maker.exe --input "D:\work\case01\deck.inp"
 
 TEL：18186229445
 EMAIL：<ren2321947887@qq.com>
+
+## 许可
+
+本项目采用 MIT License（见仓库根目录 `LICENSE`）。使用、复制、修改及分发时需保留原始版权与许可声明。

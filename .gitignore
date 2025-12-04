@@ -6,6 +6,7 @@
 !README.md
 !runbat_maker.py
 !runbat_maker.spec
+!LICENSE
 
 # Allow scripts directory contents
 !scripts/
