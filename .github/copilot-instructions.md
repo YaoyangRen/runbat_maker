@@ -23,6 +23,7 @@
 ## Conventions & Gotchas
 - Always emit absolute paths and preserve the command order (`mcnp6.exe ...`, `del runtp*`, `del src*`, `pause`).
 - `generate_bat_file()` writes using `locale.getpreferredencoding(False)` so non-ASCII deck names remain readable to `cmd.exe`; avoid forcing UTF-8 unless you also update MCNP6 launch requirements.
+- Input/output paths must be wrapped in double quotes in `run.bat` so MCNP6 handles spaces or localized characters; keep that quoting logic when refactoring.
 - CLI flags must work both in CPython and PyInstaller contexts; avoid environment-dependent defaults. Keep bilingual prompts for interactive flows and suppress them via `--silent` when wiring automation.
 - Registry writes must stay under HKCU; provide guardrails when paths are invalid. Use the existing helper to fetch `winreg` so non-Windows environments fail gracefully.
 - Input enumeration purposely stays shallow (single directory). Add recursion only behind opt-in flags and update docs/tests accordingly.

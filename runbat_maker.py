@@ -151,7 +151,7 @@ def generate_bat_file(target_files: List[str], output_dir: str) -> str:
         for abs_path in target_files:
             base, ext = os.path.splitext(abs_path)
             output_file = f"{base}.o"
-            bat_file.write(f"mcnp6.exe i={abs_path} o={output_file} tasks 93\n")
+            bat_file.write(f"mcnp6.exe i=\"{abs_path}\" o=\"{output_file}\" tasks 93\n")
             bat_file.write("del runtp*\n")
             bat_file.write("del src*\n")
         bat_file.write("pause\n")

@@ -11,6 +11,7 @@ Runbat Maker 会扫描指定目录中的 `.i` / `.inp`（MCNP 输入卡）并生
 
 - 在指定目录或单个文件上生成 `run.bat`，内容始终写入绝对路径以及 `tasks 93`、清理命令、`pause`（可参考 `test/run.bat`）。
 - 输出的 `run.bat` 会使用当前系统 ANSI/代码页编码（`locale.getpreferredencoding(False)`），以便含中文路径的命令能在 `cmd.exe` / `mcnp6.exe` 下正确解析。
+- 所有 `i=` / `o=` 参数都会自动带双引号，保证带空格或中括号的文件名照常运行。
 - `--run-mcnp` 会将生成的 `run.bat` 复制到登记的 MCNP6 目录并在该目录中执行，确保 `mcnp6.exe` 可被找到。
 - `--register-shell` / `--unregister-shell` 在 Explorer 中注册/移除四个右键项（目录+文件，生成+运行）。
 - `--register-startup` / `--unregister-startup` 控制开机自启，启动命令会以 `--idle-service --silent` 方式运行并保持空闲。
