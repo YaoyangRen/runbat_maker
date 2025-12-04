@@ -1,0 +1,12 @@
+# Ignore everything by default
+*
+
+# Allow core sources and docs
+!.gitignore
+!README.md
+!runbat_maker.py
+!runbat_maker.spec
+
+# Allow scripts directory contents
+!scripts/
+!scripts/**
